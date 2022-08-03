@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block title %} Blog & Haberler {% endblock title %}
+
+{% block baslik %} Blog & Haberler {% endblock baslik %}
+
+{% block youtube %}
+{% if session["username"]=="oraycan" %}
+<div class="group group-sm group-middle">
+<a class="button button-sm button-icon button-icon-left button-light" href="/blog-ekle">
+<span class="icon mdi mdi-play"></span>Blog Ekle</a></div>
+{% endif %}
+{% endblock youtube %}
+
+{% block bgpath %}{{ url_for('static', filename='images/blog-bg.jpeg')}} {% endblock bgpath %}
+
+{% block body %}
+
+
+
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-40 row-md-50 row-xxl-80">
+          {% for i in blog.items  %}
+            <div class="col-sm-6 col-lg-4">
+              <!-- Post Classic-->
+              <article class="post-classic"><a class="post-classic-figure" href="/blog-detay/{{i.url}}"><img class="post-classic-image" src="{{ url_for('static', filename='uploads/'+i.image_url)}}" alt="" width="339" height="251"/></a>
+                <time class="post-classic-time" datetime="2022">{{i.tarih.day}}/{{i.tarih.month}}/{{i.tarih.year}}</time>
+                <div class="post-classic-divider"></div>
+                <p class="heading-5 post-classic-title"><a href="/blog-detay/{{i.url}}">{{i.title}}</a></p>
+              </article>
+            </div>
+          {% endfor %}
+
+
+
+          <!--SAYFA NO-->
+            <div class="col-12">
+              <nav class="pagination-outer text-center">
+                <ul class="pagination">
+                {% for i in blog.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)  %}
+                  {% if i %}
+                      {% if blog.page == i %}
+                       <li class="page-item active"><a class="page-link" href="{{url_for ('bloglar', page=i)}}">{{i}}</a></li>
+                      {% else %}
+                       <li class="page-item"><a class="page-link" href="{{url_for ('bloglar', page=i)}}">{{i}}</a></li>
+                      {% endif %}
+                  {% else %}
+                   ...
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              </nav>
+            </div>
+            <!--SAYFA NO-->
+
+
+
+          </div>
+        </div>
+      </section>
+
+      
+{% endblock body %}

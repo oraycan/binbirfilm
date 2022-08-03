@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Giriş Yap
+{% endblock title %}
+
+{% block baslik %}
+Giriş Yap
+{% endblock baslik %}
+
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+      <!--Boxed Grid System-->
+      <section class="section section-md bg-default">
+        <div class="container grid-demo grid-demo-underlined">
+          <h4 class="text-center">Giriş Yap</h4>
+          <div class="row">
+            <div class="col-12">
+              <!-- RD Mailform-->
+              <form method=post>
+                <dl>
+                  {{ render_field(form.username, class="form-control") }}                  
+                  {{ render_field(form.password, class="form-control") }}
+                </dl>
+                <p><button class="button button-lg button-primary" type="submit">Giriş Yap</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock body %}

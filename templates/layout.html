@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K7NFWMD');</script>
+  <!-- End Google Tag Manager -->
+    <title> {% block title %}
+    
+    {% endblock title %} - Binbir Film</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../../cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="{{ url_for('static', filename='images/logo-icon/favicon.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600,700,800%7CPoppins:600">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <style>
+    .preloader{
+      display: none;
+    }
+    .page {
+    position: relative;
+    min-height: 100vh;
+    opacity: 1!important;
+}
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  
+  
+  
+  
+  </head>
+
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7NFWMD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+        <!--LOADER-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-top">
+          <div class="preloader-top-sun"><img src="{{ url_for('static', filename='images/logo-icon/preloader-default-90x73.png') }}" alt="" width="90" height="73"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--LOADER-->
+    <div class="page">
+
+    <!-- Page Header-->
+      <header class="section page-header page-header-1 context-dark">
+        <div class="page-header-1-figure m-parallax">
+          <div class="page-header-1-image m-parallax-image" style="background-image: url('{% block bgpath %}{% endblock bgpath %}');"></div>
+        </div>
+
+        {% include "includes/navbar.html" %}
+         <section class="breadcrumbs-custom">
+          <div class="breadcrumbs-custom-inner">
+            <div class="container">
+              <div class="breadcrumbs-custom-main m-parallax-content">
+                <h2 class="breadcrumbs-custom-title"> 
+                {% block baslik %} {% endblock baslik %} </h2>
+                {% block header_aciklama %} {% endblock header_aciklama %}
+              {% block youtube %} {% endblock youtube %}
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+           {% include "includes/messages.html" %}
+
+          {% block body %}
+  
+          {% endblock body %}
+
+
+        
+
+
+
+                    <!-- Page Footer-->
+            <footer class="section footer-modern context-dark">
+              <div class="footer-modern-main">
+                <div class="container">
+                  <div class="row row-30 justify-content-lg-between">
+                    <div class="col-sm-5 col-md-3 col-lg-3">
+                      <p class="footer-modern-title">Menu</p>
+                      <div class="footer-modern-item-block">
+                        <ul class="list list-1">
+                          <li><a href="/">Ana Sayfa</a></li>
+                          <li><a href="/blog">Blog</a></li>
+                          <li><a href="/kategoriler">Kategoriler</a></li>
+                          <li><a href="/profil">Profil</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-7 col-md-5 col-lg-4">
+                      <p class="footer-modern-title">Kategoriler</p>
+                      <div class="footer-modern-item-block" style="max-width: 300px;">
+                        <div class="row row-13">
+                          <div class="col-6">
+                            <ul class="list list-1">
+                              <li><a href="/kategori/Macera">Macera</a></li>
+                              <li><a href="/kategori/Fantastik">Fantastik</a></li>
+                              <li><a href="/kategori/Animasyon">Animasyon</a></li>
+                              <li><a href="/kategori/Dram">Dram</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-6">
+                            <ul class="list list-1">
+                              <li><a href="/kategori/Korku">Korku</a></li>
+                              <li><a href="/kategori/Aksiyon">Aksiyon</a></li>
+                              <li><a href="/kategori/Komedi">Komedi</a></li>
+                              <li><a href="/kategoriler">Tüm Kategoriler</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <p class="footer-modern-title">İletişim</p>
+                      <div class="footer-modern-item-block">
+                        <ul class="list list-1">
+                          <li><a href="contact-us.html">Telefon</a></li>
+                          <li><a href="index.html#">Mail</a></li>
+                          <li><a href="index.html#">S.S.S</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-modern-aside">
+                <div class="container">
+                  <div class="footer-modern-aside-layout"><a class="brand" href="index.html"><img class="brand-logo-dark" src="{{ url_for('static', filename='images/logo-icon/logo-default-236x34.png')}}" alt="" width="118" height="17"/><img class="brand-logo-light" src="{{ url_for('static', filename='images/logo-icon/logo-inverse-236x34.png')}}" alt="" width="118" height="17"/></a>
+                    <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>. All rights reserved.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+                    <div>
+                      <div class="group group-sm"><a class="link-1 icon mdi mdi-instagram" href="index.html#"></a><a class="link-1 icon mdi mdi-facebook" href="index.html#"></a><a class="link-1 icon mdi mdi-youtube-play" href="index.html#"></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+          <div class="snackbars" id="form-output-global"></div>
+      <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+      <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+      <script>CKEDITOR.replace( 'content' );</script>
+
+  </body>           
+</html>

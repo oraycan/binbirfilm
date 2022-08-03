@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block title %}{{filmara.title}} - Film Detayı{% endblock title %}
+{% block baslik %}{{filmara.title}}{% endblock baslik %}
+{% block bgpath %}https://image.tmdb.org/t/p/original{{filmara.backdrop_path}} {% endblock bgpath %}
+{% block youtube %}
+<div class="group group-sm group-middle">
+<a class="button button-sm button-icon button-icon-left button-light" data-lightgallery="item" href="https://youtu.be/{{fragman}}">
+<span class="icon mdi mdi-play"></span>Fragman</a></div>
+{% endblock youtube %}
+
+{% block body %}
+
+ <section class="section section-lg">
+        <div class="container">
+          <div class="row row-30 flex-column-reverse flex-lg-row">
+            <div class="col-lg-8">
+              <article class="post-info inset-1">
+                <h4 class="post-info-title">{{filmara.title}}</h4>
+                <div class="post-info-meta bg-gray-100">
+                  <ul class="post-info-meta-list">
+                    <li><span class="icon mdi mdi-calendar-blank"></span><span class="small-text font-weight-sbold">{{filmara.release_date}}</span></li>
+                    <li><span class="icon mdi mdi-star-outline"></span><span class="small-text font-weight-sbold">IMDB: {{filmara.vote_average}}\10</span></li>
+                    <li><span class="icon mdi mdi-earth"></span><span class="small-text font-weight-sbold">Orjinal Dil: {{filmara.original_language}}  </span></li>
+                  </ul>
+                </div>
+                <p>{{filmara.overview}} </p>
+                <table class="post-info-table">
+                  <tr>
+                    <td>Oyuncular</td>
+                    {% for i in range(5)%}
+                    <td>{{cast[i]["name"]}}</td>
+                    
+                    {% endfor %}
+                    
+                  </tr>
+                  <tr>
+                    <td>Kategoriler</td>
+                    {% for i in  filmara.genres %}
+                    <td><a href="/kategori/{{i.name.capitalize()}}">{{i.name}}</a></td>
+                    {% endfor %}
+                    
+                  </tr>
+                </table>
+                
+              </article>
+            </div>
+
+            <!-- POSTER -->
+            <div class="col-lg-4 text-center text-lg-start">
+              <div class="movie-page-imageg"><img src="https://image.tmdb.org/t/p/original{{filmara.poster_path}}" alt="" width="375" height="491"/>
+              </div>
+            </div>
+            <!-- POSTER -->
+
+            <h3 class="mt-40 mt-md-50 mt-lg-50 mt-xl-80">Benzer Filmler</h3>
+                <p>{{filmara.title}} filmine benzer, beğeneceğinizi düşündüğümüz filmler</p>
+                 <!-- Benzer Filmler -->
+                 <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px" data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="100">
+
+                
+                {% for i in benzer[:5]  %}
+                <div class="item">
+                  <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{i['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{i['id']}}">{{i["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{i['release_date']}}</span></div>
+                </div>      
+              </div>   
+            </div>       
+                {% endfor %}
+              
+            
+          </div>
+
+                </div>
+                <!-- Benzer Filmler -->
+                
+                    
+                 
+               
+
+
+
+
+
+          </div>
+        </div>
+      </section>
+
+{% endblock body %}

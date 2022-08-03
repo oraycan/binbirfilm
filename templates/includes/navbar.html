@@ -1,0 +1,95 @@
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="1px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="{{ url_for('static', filename='images/logo-icon/logo-default-236x34.png')}}" alt="" width="118" height="17"/><img class="brand-logo-light" src="{{ url_for('static', filename='images/logo-icon/logo-inverse-236x34.png')}}" alt="" width="200" height="17"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-nav-wrap">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                   <!--  <li class="rd-nav-item"><a class="rd-nav-link" href="/">Ana Sayfa</a></li>     -->  
+                      <!-- RD Navbar Dropdown-->
+                       <li class="rd-nav-item"><a class="rd-nav-link" href="/blog">Blog</a>
+                    <!--   <ul class="rd-menu rd-navbar-dropdown">
+                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="blog-post.html">Blog post</a></li>
+                      </ul>  -->  
+                    </li>       
+                     <!-- RD Navbar Megamenu-->
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/kategoriler">Kategoriler</a>
+                      <ul class="rd-menu rd-navbar-megamenu">
+                        <li class="rd-megamenu-item">
+                          <p class="rd-megamenu-title">Film Türleri</p>
+                          <div class="rd-megamenu-block">
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Macera">Macera</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Fantastik">Fantastik</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Animasyon">Animasyon</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Dram">Dram</a></li>
+                            </ul>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Korku">Korku</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Aksiyon">Aksiyon</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Komedi">Komedi</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Tarih">Tarih</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="rd-megamenu-item">
+                        <!--  <p class="rd-megamenu-title">Film Türleri</p>-->
+                          <div class="rd-megamenu-block">
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/vahsibati">Vahşi Batı</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Gerilim">Gerilim</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Suc">Suç</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Belgesel">Belgesel</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/bilimkurgu">Bilim Kurgu</a></li>
+                            </ul>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Gizem">Gizem</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Muzik">Müzik</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Romantik">Romantik</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Aile">Aile</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="/kategori/Savas">Savaş</a></li>
+
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    {% if session["logged_in"] %}
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="/profil/{{session['username']}}"> {{session["username"]}} </a>
+                      <ul class="rd-menu rd-navbar-dropdown">
+                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/profil/{{session['username']}}">Profil</a></li>
+                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/logout">Çıkış Yap</a></li>
+                      </ul>
+                    </li>
+                    {% else %}
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="/kayitol">Kayıt Ol</a></li> 
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="/login">Giriş Yap</a></li> 
+                    {% endif %}
+                    <!-- RD Navbar Dropdown-->
+                      
+                    
+                     
+                  </ul>
+                </div>
+                
+                <!-- <div class="rd-navbar-collapse-outer context-light">
+                  <input class="form-input" id="rd-search-form-input" type="text" name="search" autocomplete="off">
+              </div> -->
+
+
+               
+              
+            </div>            
+            <div class="rd-navbar-placeholder"></div>
+          </nav>
+        </div>

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %} {{kategori_film[0][1]}} Filmleri {% endblock title %}
+
+{% block baslik %} {{kategori_film[0][1]}} {% endblock baslik %}
+{% block bgpath %}{{ url_for('static', filename='images/bg1.jpeg')}} {% endblock bgpath %}
+
+{% block body %}
+
+
+
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-30 mt-xl-60">
+          {% for i in filmler.items %}
+            {% if i.id in film_id %}
+              <div class="col-sm-6 col-lg-3">
+                <article class="tour-minimal context-dark">
+                {% if i.backdrop_path == None %}
+                <div class="tour-minimal-inner" style="background-image: url('https://image.tmdb.org/t/p/original{{i.poster_path}}');">
+              
+                {% else %}
+                <div class="tour-minimal-inner" style="background-image: url('https://image.tmdb.org/t/p/original{{i.backdrop_path}}');">
+                
+                {% endif %}  
+                
+                    <div class="tour-minimal-header">
+                    </div>
+                    <div class="tour-minimal-main">
+                      <h6 class="tour-minimal-title"><a href="/film/{{i.id}}">{{i.title}}</a></h6>
+                    </div>
+                    <div class="tour-minimal-caption">
+                      <p>{{i.overview[0:40]}}</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              {% endif %}
+            {% endfor %}
+            
+
+          </div>
+        </div>
+  <!--SAYFA NO-->
+        <nav class="pagination-outer text-center">
+          <ul class="pagination">
+                 {% for i in filmler.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)  %}
+                  {% if i %}
+                      {% if filmler.page == i %}
+                       <li class="page-item active"><a class="page-link" href="{{url_for ('kategori', kategori_ismi=kategori_ismi , page=i)}}">{{i}}</a></li>
+                      {% else %}
+                       <li class="page-item"><a class="page-link" href="{{url_for ('kategori', kategori_ismi=kategori_ismi , page=i)}}">{{i}}</a></li>
+                      {% endif %}
+                  {% else %}
+                   ...
+                  {% endif %}
+                {% endfor %}
+          </ul>
+        </nav>
+      </section>
+      <!--SAYFA NO-->
+
+          
+    
+
+{% endblock body %}

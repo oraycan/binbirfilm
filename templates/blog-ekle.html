@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %} Blog Ekle {% endblock title %}
+
+{% block baslik %} Blog Ekle {% endblock baslik %}
+
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+      <!--Boxed Grid System-->
+      <section class="section section-md bg-default">
+        <div class="container grid-demo grid-demo-underlined">
+          <h4 class="text-center">Blog Ekle</h4>
+          <div class="row">
+            <div class="col-12">
+              <!-- RD Mailform-->
+              <form method=post enctype="multipart/form-data">
+                <dl>
+                  {{ render_field(form.title, class="form-control") }}                  
+                  {{ render_field(form.content, class="form-control", style="height: 250px;") }}
+                  <br>
+                  <input type="file" name="pic">
+                  <br>
+                  {{ render_field(form.tags, class="form-control") }}
+                  <br>
+                  {% for i in kategori_cek %}
+                  {{i.category_name}} <input type="checkbox" name="kategori" value="{{i.id}}">
+                  {% endfor %}
+                  
+                  
+                </dl>
+                <p><button class="button button-lg button-primary" type="submit">Ekle</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      
+{% endblock body %}

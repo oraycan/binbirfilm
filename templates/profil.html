@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+<style>h6 {text-align: center;}</style>
+{% block title %} {{session["username"]}} {% endblock title %}
+
+
+
+{% block body %}
+<section class="section section-md bg-default">
+    <div class="container grid-demo grid-demo-underlined">
+        <div class="row">
+        <!-- Profil Detayları -->
+            <div class="col-4">
+            
+                <h6 text-align: center;> <mark> {{session["username"]}} </mark></h6>
+                {% if not user.image%}
+                <img src="{{ url_for('static', filename='images/profiles/default.jpeg')}}" alt="Avatar" width="150" height="50">
+                {% else %}
+                <img src="{{ url_for('static', filename='images/profiles/'+user.image)}}" alt="Avatar" width="150" height="50">
+                {% endif %}     
+                <!-- Profil Foto Değiştir -->
+                <p>Profil Fotoğrafı Yükle</p>
+                <form method=POST enctype="multipart/form-data">
+                    <input type="file" name="avatar"> 
+                    <p><button class="button button-lg button-primary" type="submit">Yükle</button> 
+                 </form>        
+            </div>
+        <!-- Profil Detayları -->
+
+
+        <!-- Favori Filmler -->
+            <div class="col-8">
+
+                <div class="container">
+                <div class="text-center wow fadeIn" data-wow-delay="100">
+                <h2>Beğendiğim Filmler</h2>
+                </div>
+                <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px" data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="100">
+                {% if like_filmler == None %}
+                    <p>Beğendiğiniz Film Yok</p>
+                {% else %}
+                    {% for i in  like_filmler %}
+                    <div class="item">
+                    <div class="box-nina">
+                    <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{i.poster_path}}" alt="" width="356" height="412"/>
+                    </div>
+                    <div class="box-nina-text">
+                    <h4><a class="link-white" href="/film/{{i.id}}">{{i.title}}</a></h4>
+                    <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{i.release_date}}</span></div>
+                    </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+
+
+{% endblock body %}

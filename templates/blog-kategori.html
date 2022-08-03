@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block title %} {{sorgu_name.category_name}} {% endblock title %}
+{% block baslik %} {{sorgu_name.category_name}} {% endblock baslik %}
+
+{% block bgpath %}{{ url_for('static', filename='images/bg1.jpeg')}} {% endblock bgpath %}
+
+
+{% block body %} 
+
+      <section class="section section-lg bg-gray-100">
+        <div class="container">
+          <div class="row row-50 flex-lg-row-reverse">
+            <div class="col-lg-4">
+              <h4>Kategoriler</h4>
+              <div class="box-right">
+                <div class="box-tina">
+                  <ul class="box-tina-list">
+                  {% for i in tum_kategoriler  %}
+                   <li><a href="/blog-kategori/{{i[1]}}">{{i[1]}}</a></li>
+                  {% endfor %}
+                    
+                  </ul>
+                </div>
+                <h4>Çok Okunanlar</h4>
+                <div class="group-post-minimal">
+                {% for i in cok_okunan[:3] %}
+                  <article class="post-minimal"><a class="post-minimal-media" href="{{i.url}}"><img class="post-minimal-image" src="{{ url_for('static', filename='uploads/'+i.image_url)}}" alt="" width="79" height="78"/></a>
+                    <div class="post-minimal-main">
+                      <p class="post-minimal-title"><a class="link-black"href="{{i.url}}">{{i.title}}</a></p>
+                      <time class="post-minimal-time" datetime="{{i.tarih.year}}">{{i.tarih.day}}/{{i.tarih.month}}/{{i.tarih.year}}</time>
+                    </div>
+                  </article>
+                  {% endfor %}
+                 
+                </div>
+              </div>
+            </div>
+
+<!-- DÖNEN BLOGLAR -->
+            <div class="col-lg-8">
+{% for i in blog.items %}
+{% if i.id in blog_id%}
+              <article class="tour-modern">
+                <div class="tour-modern-media"><a class="tour-modern-figure" href="/blog-detay/{{i.url}}"><img class="tour-modern-image" src="{{ url_for('static', filename='uploads/'+i.image_url)}}" alt="" width="210" height="264"/></a></div>
+                <div class="tour-modern-main">
+                  <h5 class="tour-modern-title"><a href="/blog-detay/{{i.url}}">{{i.title}}</a></h5>
+                  <div class="tour-modern-info">{{i.tarih.year}}, {{sorgu_name.category_name}}</div>
+                  <p>{{i.content[0:140]|safe}}</p>
+                </div>
+              </article>
+{% else %}
+{% endif %}
+{% endfor %}
+<!-- DÖNEN BLOGLAR -->
+
+              
+              
+              
+             
+              
+              <nav class="pagination-outer text-center">
+                <ul class="pagination">
+                 {% for i in blog.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)  %}
+                  {% if i %}
+                      {% if blog.page == i %}
+                       <li class="page-item active"><a class="page-link" href="{{url_for ('blog_kategori', blog_kategori=blog_kategori, page=i)}}">{{i}}</a></li>
+                      {% else %}
+                       <li class="page-item"><a class="page-link" href="{{url_for ('blog_kategori',blog_kategori=blog_kategori, page=i)}}">{{i}}</a></li>
+                      {% endif %}
+                  {% else %}
+                   ...
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block baslik %}404{% endblock baslik %}
+{% block title %} Sayfa Bulunumadı {% endblock title %}
+ {% block header_aciklama %} Upppsss {% endblock header_aciklama %}
+
+{% block body %}
+
+<section class="section section-md bg-default text-center">
+  <div class="container">
+    <article class="text-group-1">
+      <p class="text-xxl text-outer">404</p>
+      <h4 class="text-inner">Oops! Aradığınız sayfa bulunumadı</h4>
+    </article>
+    <!-- RD Search-->
+    <form class="rd-search rd-search-inline block-2 block-centered mt-lg-60" action="search-results.html" method="GET">
+      <div class="form-wrap">
+        <label class="form-label" for="rd-search-form-input">Ara...</label>
+        <input class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off">
+      </div>
+      <div class="form-button">
+        <button class="rd-search-submit" type="submit"></button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock body %}

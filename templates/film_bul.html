@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Ana Sayfa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../../cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="{{ url_for('static', filename='images/logo-icon/favicon.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600,700,800%7CPoppins:600">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ url_for('static', filename='images/ie8-panel/warning_bar_0000_us.jpg')}}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    
+ 
+
+    <div class="page">
+      <!--Header Main Classic-->
+      <!-- Page Header-->
+
+      <header class="section page-header page-header-1 context-dark">
+
+        {% include "includes/navbar.html" %}
+        
+      </header>
+      
+      <!-- FScreen-->
+      <section class="section bg-custom-1 position-relative context-dark">
+        <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="50000" data-simulate-touch="false">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-slide-caption main-section text-center text-md-start">
+                <div class="container">
+                  <div class="row row-40 flex-column-reverse flex-md-row justify-content justify-content-lg-between">
+                    <div class="col-md-6 col-lg-5 col-xl-6">
+                       <form method="POST">
+                          <div class="row">
+                              <div class="col-2">
+                                <input type="checkbox" name="kategori" value="12" id="1" {% if "12" in check %} checked {% endif %}> 
+                                <label for="1"> Macera</label>
+                              </div>
+                              <div class="col-2">
+                                <input type="checkbox" name="kategori" value="14" {% if "14" in check %} checked {% endif %}> Fantastik 
+                              </div>
+                              <div class="col-2">
+                                <input type="checkbox" name="kategori" value="16" {% if "16" in check %} checked {% endif %}> Animasyon
+                              </div>
+                              <div class="col-2">
+                                <input type="checkbox" name="kategori" value="18" {% if "18" in check %} checked {% endif %}> Dram
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="27" {% if "27" in check %} checked {% endif %}> Korku
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="28" {% if "28" in check %} checked {% endif %}> Animasyon
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="35" {% if "35" in check %} checked {% endif %}> Komedi
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="36" {% if "36" in check %} checked {% endif %}> Tarih
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-2">
+                                <input type="checkbox" name="kategori" value="37" {% if "37" in check %} checked {% endif %}> Vahşi Batı
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="53" {% if "53" in check %} checked {% endif %}> Gerilim
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="80" {% if "80" in check %} checked {% endif %}> Suç
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="99" {% if "99" in check %} checked {% endif %}> Belgesel
+                              </div>
+                          </div>
+                          <div class="row">         
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="878" {% if "878" in check %} checked {% endif %}> Bilim Kurgu
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="9648" {% if "9648" in check %} checked {% endif %}> Gizem
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="10402" {% if "10402" in check %} checked {% endif %}> Müzik
+                              </div>
+                              <div class="col-2">
+                                 <input type="checkbox" name="kategori" value="10749" {% if "10749" in check %} checked {% endif %}> Romantik
+                              </div> 
+                          </div>
+                          <div class="row">  
+                            <div class="col-2">
+                               <input type="checkbox" name="kategori" value="10751" {% if "10751" in check %} checked {% endif %}> Aile
+                            </div>
+                            <div class="col-2">
+                               <input type="checkbox" name="kategori" value="10752" {% if "10752" in check %} checked {% endif %}> Savaş
+                            </div>
+                            <div class="col-2">
+                               <input type="checkbox" name="kategori" value="10770" {% if "10770" in check %} checked {% endif %}> TV Film
+                            </div>
+                          </div>
+                <label for="imdb">IMDB Puanı</label>
+                    <select name="imdb" id="imdb">
+                        <option value="0">Farketmez</option>
+                        <option value="6.0">6 ></option>
+                        <option value="7.0">7 ></option>
+                        <option value="8.0">8 ></option>
+                        <option value="9.0">9 ></option>
+                    </select>
+                    <button class="button button-lg button-primary" type="submit">Film Bul</button>
+
+            </form>
+                      </ul>
+                      <h1 class="block-8" data-caption-animate="fadeInUp" data-caption-delay="100">{{randomsonuc.title}}</h1>
+                      <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">{{randomsonuc.overview}}</p>
+                      <div class="text-center text-lg-start button-custom-offset"><a class="button button-custom" href="https://youtu.be/{{fragman}}" data-lightgallery="item" data-caption-animate="fadeInUp" data-caption-delay="450"><span class="icon mdi mdi-play"></span>Fragman</a></div>
+                    </div>
+                    <div class="col-md-6 col-lg-7 col-xl-5 onset-1">
+                      <div class="slider-image onset-left-2"><img src="https://image.tmdb.org/t/p/w500{{randomsonuc.poster_path}}" alt="" width="422" height="522"/>
+                        <div class="slider-image-title"><span>{{kategori[0]}}</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+          </div>
+
+          </div>
+          
+        </div>
+
+      </section>
+     
+     
+      
+
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-modern context-dark">
+        <div class="footer-modern-main">
+          <div class="container">
+            <div class="row row-30 justify-content-lg-between">
+              <div class="col-sm-5 col-md-3 col-lg-3">
+                <p class="footer-modern-title">Footer 1</p>
+                <div class="footer-modern-item-block">
+                  <ul class="list list-1">
+                    <li><a href="about.html">Başlık</a></li>
+                    <li><a href="blog.html">Başlık</a></li>
+                    <li><a href="our-team.html">Başlık</a></li>
+                    <li><a href="index.html#">Başlık</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-5 col-lg-4">
+                <p class="footer-modern-title">Kategoriler</p>
+                <div class="footer-modern-item-block" style="max-width: 300px;">
+                  <div class="row row-13">
+                    <div class="col-6">
+                      <ul class="list list-1">
+                        <li><a href="categories.html">Aksiyon</a></li>
+                        <li><a href="categories.html">Komedi</a></li>
+                        <li><a href="categories.html">Bilim Kurgu</a></li>
+                        <li><a href="categories.html">Fantastik</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="list list-1">
+                        <li><a href="categories.html">Çizgi Film</a></li>
+                        <li><a href="categories.html">Korku</a></li>
+                        <li><a href="categories.html">Diğerleri</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <p class="footer-modern-title">İletişim</p>
+                <div class="footer-modern-item-block">
+                  <ul class="list list-1">
+                    <li><a href="contact-us.html">Telefon</a></li>
+                    <li><a href="index.html#">Mail</a></li>
+                    <li><a href="index.html#">S.S.S</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-modern-aside">
+          <div class="container">
+            <div class="footer-modern-aside-layout"><a class="brand" href="index.html"><img class="brand-logo-dark" src="{{ url_for('static', filename='images/logo-icon/logo-default-236x34.png')}}" alt="" width="118" height="17"/><img class="brand-logo-light" src="{{ url_for('static', filename='images/logo-icon/logo-inverse-236x34.png')}}" alt="" width="118" height="17"/></a>
+              <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>. All rights reserved.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+              <div>
+                <div class="group group-sm"><a class="link-1 icon mdi mdi-instagram" href="index.html#"></a><a class="link-1 icon mdi mdi-facebook" href="index.html#"></a><a class="link-1 icon mdi mdi-youtube-play" href="index.html#"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+     <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

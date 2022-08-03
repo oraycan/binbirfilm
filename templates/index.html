@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K7NFWMD');</script>
+  <!-- End Google Tag Manager -->
+    <title>Binbir Film - Sana Göre Filmler</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../../cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="{{ url_for('static', filename='images/logo-icon/favicon.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600,700,800%7CPoppins:600">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7NFWMD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ url_for('static', filename='images/ie8-panel/warning_bar_0000_us.jpg')}}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    
+ 
+
+    <div class="page">
+      <!--Header Main Classic-->
+      <!-- Page Header-->
+
+      <header class="section page-header page-header-1 context-dark">
+
+        {% include "includes/navbar.html" %}
+        
+      </header>
+      
+      <!-- FScreen-->
+      <section class="section bg-custom-1 position-relative context-dark">
+        <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="50000" data-simulate-touch="false">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-slide-caption main-section text-center text-md-start">
+                <div class="container">
+                  <div class="row row-40 flex-column-reverse flex-md-row justify-content justify-content-lg-between">
+                    <div class="col-md-6 col-lg-5 col-xl-6">
+                      <ul class="list-movie-info" data-caption-animate="fadeIn" data-caption-delay="50">
+                        {% if release_date %}
+                        <li>{{randomsonuc.release_date.year }}</li>
+                        {% endif %}
+                        <li>imdb: {{randomsonuc.vote_average}}</li>
+                      </ul>
+                      <h1 class="block-8" data-caption-animate="fadeInUp" data-caption-delay="100">{{randomsonuc.title}}</h1>
+                      <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">{{randomsonuc.overview}}</p>
+                      <div class="text-center text-lg-start button-custom-offset"><a class="button button-custom" href="https://youtu.be/{{fragman}}" data-lightgallery="item" data-caption-animate="fadeInUp" data-caption-delay="450"><span class="icon mdi mdi-play"></span>Fragman</a></div>
+                    </div>
+                    <div class="col-md-6 col-lg-7 col-xl-5 onset-1">
+                      <div class="slider-image onset-left-2"><img src="https://image.tmdb.org/t/p/w500{{randomsonuc.poster_path}}" alt="" width="422" height="522"/>
+                        <div class="slider-image-title"><span>{{kategori[0]}}</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-caption main-section text-center text-md-start">
+                <div class="container">
+                  <div class="row row-40 flex-column-reverse flex-md-row justify-content justify-content-lg-between">
+                    <div class="col-md-6 col-lg-5 col-xl-6">
+                      <ul class="list-movie-info" data-caption-animate="fadeIn" data-caption-delay="50">
+                        <li>{{randomsonuc1.release_date }}</li>
+                        <li>imdb: {{randomsonuc1.vote_average}}</li>
+                      </ul>
+                      <h1 class="block-8" data-caption-animate="fadeInUp" data-caption-delay="100">{{randomsonuc1.title}}</h1>
+                      <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">{{randomsonuc1.overview}}</p>
+                      <div class="text-center text-lg-start button-custom-offset"><a class="button button-custom" href="https://youtu.be/{{fragman1}}" data-lightgallery="item" data-caption-animate="fadeInUp" data-caption-delay="450"><span class="icon mdi mdi-play"></span>Fragman</a></div>
+                    </div>
+                    <div class="col-md-6 col-lg-7 col-xl-5 onset-1">
+                      <div class="slider-image onset-left-2"><img src="https://image.tmdb.org/t/p/w500{{randomsonuc1.poster_path}}" alt="" width="422" height="522"/>
+                        <div class="slider-image-title"><span>{{kategori1[0]}}</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-caption main-section text-center text-md-start">
+                <div class="container">
+                  <div class="row row-40 flex-column-reverse flex-md-row justify-content justify-content-lg-between">
+                    <div class="col-md-6 col-lg-5 col-xl-6">
+                      <ul class="list-movie-info" data-caption-animate="fadeIn" data-caption-delay="50">
+                        <li>{{randomsonuc2.release_date }}</li>
+                        <li>imdb: {{randomsonuc2.vote_average}}</li>
+                      </ul>
+                      <h1 class="block-8" data-caption-animate="fadeInUp" data-caption-delay="100">{{randomsonuc2.title}}</h1>
+                      <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">{{randomsonuc2.overview}}</p>
+                      <div class="text-center text-lg-start button-custom-offset"><a class="button button-custom" href="https://youtu.be/{{fragman2}}" data-lightgallery="item" data-caption-animate="fadeInUp" data-caption-delay="450"><span class="icon mdi mdi-play"></span>Fragman</a></div>
+                    </div>
+                    <div class="col-md-6 col-lg-7 col-xl-5 onset-1">
+                      <div class="slider-image onset-left-2"><img src="https://image.tmdb.org/t/p/w500{{randomsonuc2.poster_path}}" alt="" width="422" height="522"/>
+                        <div class="slider-image-title"><span>{{kategori2[0]}}</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Swiper Pagination-->
+          <div class="swiper-pagination"></div>
+          <!--Swiper Navigation-->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="figure-classic-pattern"></div>
+        <div class="figure-classic-pattern v-2"></div>
+        <div class="figure-classic-pattern v-3"></div>
+      </section>
+      <!--Popular Movies-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="text-center wow fadeIn" data-wow-delay="100">
+            <h2>Popular Filmler</h2>
+            <p>Son zamanlarda ki en popüler filmler.</p>
+          </div>
+          <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px" data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="100">
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{popular_result[0]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{popular_result[0][id]}}">{{popular_result[0]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{popular_result[0]['release_date']}}</span></div>
+                </div>
+              </div>
+              <p><a href="/likemovie/{{popular_result[0]['id']}}"><span class="mdi mdi-heart-box"> Beğen</span></a> | <a href=""> <span class="mdi mdi-playlist-plus"> Listeye Ekle</span></p></a>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{popular_result[1]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{popular_result[1]['id']}}">{{popular_result[1]["title"]}}  </a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{popular_result[1]['release_date']}}</span></div>
+                </div>
+              </div>
+              <p><a href="/likemovie/{{popular_result[1]['id']}}"><span class="mdi mdi-heart-box"> Beğen</span></a> | <a href=""> <span class="mdi mdi-playlist-plus"> Listeye Ekle</span></p></a>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{popular_result[2]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{popular_result[2]['id']}}">{{popular_result[2]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{popular_result[2]['release_date']}}</span></div>
+                </div>
+              </div>
+              <p><a href="/likemovie/{{popular_result[2]['id']}}"><span class="mdi mdi-heart-box">Beğen</span></a> | <a href=""> <span class="mdi mdi-playlist-plus"> Listeye Ekle</span></p></a>              
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{popular_result[3]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{popular_result[3]['id']}}">{{popular_result[3]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{popular_result[3]['release_date']}}</span></div>
+                </div>
+              </div>
+              <p><a href="/likemovie/{{popular_result[3]['id']}}"><span class="mdi mdi-heart-box"> Beğen</span></a> | <a href=""> <span class="mdi mdi-playlist-plus"> Listeye Ekle</span></p></a>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{popular_result[4]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{popular_result[4]['id']}}">{{popular_result[4]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{popular_result[4]['release_date']}}</span></div>
+                </div>
+              </div>
+              <p><a href="/likemovie/{{popular_result[4]['id']}}"><span class="mdi mdi-heart-box"> Beğen</span></a> | <a href=""> <span class="mdi mdi-playlist-plus"> Listeye Ekle</span></p></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Upcoming Movies-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="text-center wow fadeIn" data-wow-delay="300">
+            <h2>Yaklaşan Filmler</h2>
+            <p>Sinemalarda yakın zamanda gösterime girecek filmler</p>
+          </div>
+          <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px" data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="450">
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{upcoming_result[0]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{upcoming_result[0]['id']}}">{{upcoming_result[0]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{upcoming_result[0]['release_date']}}</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{upcoming_result[1]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{upcoming_result[0][id]}}">{{upcoming_result[1]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{upcoming_result[1]['release_date']}}</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{upcoming_result[2]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{upcoming_result[0][id]}}">{{upcoming_result[2]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{upcoming_result[2]['release_date']}}</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{upcoming_result[3]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{upcoming_result[0][id]}}">{{upcoming_result[3]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{upcoming_result[3]['release_date']}}</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box-nina">
+                <div class="box-nina-media"><img src="https://image.tmdb.org/t/p/w500{{upcoming_result[4]['poster_path']}}" alt="" width="356" height="412"/>
+                </div>
+                <div class="box-nina-text">
+                  <h4><a class="link-white" href="/film/{{upcoming_result[0][id]}}">{{upcoming_result[4]["title"]}}</a></h4>
+                  <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>{{upcoming_result[4]['release_date']}}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Popular Categories-->
+      <section class="section section-lg bg-gray-900 context-dark">
+        <div class="container">
+          <div class="row row-50 flex-lg-row-reverse align-items-center justify-content-xl-between">
+            <div class="col-lg-4 col-xl-5 col-xxl-4">
+              <div class="block-7">
+                <h2 class="wow fadeIn">Popular <br> Kategoriler</h2>
+                <p class="text-2 block-10 mt-md-20 mt-xxl-35 wow fadeIn" data-wow-delay=".025s">Tüm Zamanların En Popüler Film Kategorileri.</p><a class="button button-lg button-primary mt-md-20 mt-xxl-44 wow fadeIn" href="/kategoriler" data-wow-delay=".05s">Hepsini Gör</a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-xl-7">
+              <div class="row row-30">
+                <div class="col-sm-6 wow fadeIn"><a class="destination-1 context-dark" href="/kategori/{{encokkategori[0]}}">
+                    <figure class="destination-1-figure">
+                      <div class="destination-1-image bg-image" style="background-image: url('{{ url_for('static', filename='images/kategori/drama.jpg')}}');"></div>
+                    </figure>
+                    <div class="destination-1-caption">
+                      <p class="heading-4 destination-1-title">{{encokkategori[0]}}</p>
+                    </div></a>
+                </div>
+                <div class="col-sm-6 wow fadeIn" data-wow-delay=".025s"><a class="destination-1 context-dark" href="/kategori/{{encokkategori[1]}}">
+                    <figure class="destination-1-figure">
+                      <div class="destination-1-image bg-image" style="background-image: url('{{ url_for('static', filename='images/kategori/komedi.jpg')}}');"></div>
+                    </figure>
+                    <div class="destination-1-caption">
+                      <p class="heading-4 destination-1-title">{{encokkategori[1]}}</p>
+                    </div></a>
+                </div>
+                <div class="col-sm-6 wow fadeIn" data-wow-delay=".025s"><a class="destination-1 context-dark" href="/kategori/{{encokkategori[2]}}">
+                    <figure class="destination-1-figure">
+                      <div class="destination-1-image bg-image" style="background-image: url('{{ url_for('static', filename='images/kategori/gerilim.jpg')}}');"></div>
+                    </figure>
+                    <div class="destination-1-caption">
+                      <p class="heading-4 destination-1-title">{{encokkategori[2]}}</p>
+                    </div></a>
+                </div>
+                <div class="col-sm-6 wow fadeIn" data-wow-delay=".05s"><a class="destination-1 context-dark" href="/kategori/{{encokkategori[3]}}">
+                    <figure class="destination-1-figure">
+                      <div class="destination-1-image bg-image" style="background-image: url('{{ url_for('static', filename='images/kategori/aksiyon.jpg')}}');"></div>
+                    </figure>
+                    <div class="destination-1-caption">
+                      <p class="heading-4 destination-1-title">{{encokkategori[3]}} </p>
+                    </div></a>
+                </div>
+                <!-- 
+                <div class="col-sm-6 d-none d-lg-block"></div>
+                <div class="col-sm-6 wow fadeIn" data-wow-delay=".075s"><a class="destination-1 context-dark" href="categories.html">
+                    <figure class="destination-1-figure">
+                      <div class="destination-1-image bg-image" style="background-image: url('images/destinations-5-363x260.jpg');"></div>
+                    </figure>
+                    <div class="destination-1-caption">
+                      <p class="heading-4 destination-1-title">Comedy</p>
+                    </div></a>
+                </div>
+                 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!--Uygulama Downlaod Section-->
+      <!--
+      <section class="section section-custom-2 bg-default">
+        <div class="container">
+          <div class="row row-40 row-60 justify-content-between">
+            <div class="col-lg-5">
+              <h5 class="wow fadeInUp" data-wow-delay=".025s">Download Our App</h5>
+              <h2 class="style-title-2 wow fadeInUp" data-wow-delay=".05s">Watch Anywhere</h2>
+              <h6 class="text-gray-500 font-weight-regular ls-2 wow fadeInUp" data-wow-delay=".075s">Install Flixena app for your device and enjoy high-quality movies and TV shows anywhere.</h6>
+              <div class="button-wrap wow fadeInUp" data-wow-delay="1s"><a href="index.html#"><img src="images/button-img-01-151x49.png" alt="" width="151" height="49"/></a><a href="index.html#"><img src="images/button-img-02-153x49.png" alt="" width="153" height="49"/></a></div>
+            </div>
+            <div class="col-lg-7 parallax-scene-js">
+              <div class="section-image-1"><img src="images/section-image-1-546x33.png" alt="" width="546" height="33"/>
+                <div class="section-image-decorative-1">
+                  <div class="layer" data-depth="-.25">
+                    <div class="item"></div>
+                  </div>
+                </div>
+                <div class="section-image-decorative-2">
+                  <div class="layer" data-depth="+.25">
+                    <div class="item"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- News-->
+      <section class="section section-lg bg-gray-900 context-dark">
+        <div class="container">
+          <div class="text-center wow fadeIn" data-wow-delay=".020s">
+            <h3 class="font-sec font-weight-sbold">Blog & Haberler</h3>
+          </div>
+          <div class="row row-30 offset-top-1">
+
+     <!--Blog Döngüsü-->
+    {% for i in blog %}
+          <div class="col-sm-6 col-lg-3 wow fadeIn">
+             
+              <article class="post-creative"><a class="post-creative-image" href="blog-detay/{{i.url}}" style="background-image: url('{{ url_for('static', filename='uploads/'+i.image_url)}}');"></a>
+                <div class="post-creative-main">
+                  <p class="post-creative-title"><a href="blog-detay/{{i.url}}">{{i.title}}</a></p>
+                  <time class="post-creative-time" datetime="2022">{{i.author}} & {{i.tarih.year}}/{{i.tarih.month}}/{{i.tarih.day}}</time>
+                </div>
+              </article>
+            </div>
+    {% endfor %}
+     <!--Blog Döngüsü-->
+            
+
+
+
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-modern context-dark">
+        <div class="footer-modern-main">
+          <div class="container">
+            <div class="row row-30 justify-content-lg-between">
+              <div class="col-sm-5 col-md-3 col-lg-3">
+                <p class="footer-modern-title">Footer 1</p>
+                <div class="footer-modern-item-block">
+                  <ul class="list list-1">
+                    <li><a href="about.html">Başlık</a></li>
+                    <li><a href="blog.html">Başlık</a></li>
+                    <li><a href="our-team.html">Başlık</a></li>
+                    <li><a href="index.html#">Başlık</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-5 col-lg-4">
+                <p class="footer-modern-title">Kategoriler</p>
+                <div class="footer-modern-item-block" style="max-width: 300px;">
+                  <div class="row row-13">
+                    <div class="col-6">
+                      <ul class="list list-1">
+                        <li><a href="categories.html">Aksiyon</a></li>
+                        <li><a href="categories.html">Komedi</a></li>
+                        <li><a href="categories.html">Bilim Kurgu</a></li>
+                        <li><a href="categories.html">Fantastik</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="list list-1">
+                        <li><a href="categories.html">Çizgi Film</a></li>
+                        <li><a href="categories.html">Korku</a></li>
+                        <li><a href="categories.html">Diğerleri</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <p class="footer-modern-title">İletişim</p>
+                <div class="footer-modern-item-block">
+                  <ul class="list list-1">
+                    <li><a href="contact-us.html">Telefon</a></li>
+                    <li><a href="index.html#">Mail</a></li>
+                    <li><a href="index.html#">S.S.S</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-modern-aside">
+          <div class="container">
+            <div class="footer-modern-aside-layout"><a class="brand" href="index.html"><img class="brand-logo-dark" src="{{ url_for('static', filename='images/logo-icon/logo-default-236x34.png')}}" alt="" width="118" height="17"/><img class="brand-logo-light" src="{{ url_for('static', filename='images/logo-icon/logo-inverse-236x34.png')}}" alt="" width="118" height="17"/></a>
+              <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>. All rights reserved.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+              <div>
+                <div class="group group-sm"><a class="link-1 icon mdi mdi-instagram" href="index.html#"></a><a class="link-1 icon mdi mdi-facebook" href="index.html#"></a><a class="link-1 icon mdi mdi-youtube-play" href="index.html#"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+     <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
